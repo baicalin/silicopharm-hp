@@ -5,6 +5,8 @@
 
   <body>
 
+    {% comment %}
+
     <div class="container pure-g">
       {%- assign cover_bg_color = site.cover_bg_color | default: "rgb(40, 73, 77)" -%}
       {%- assign cover_color    = site.cover_color    | default: "rgb(255, 255, 255)" -%}
@@ -30,16 +32,21 @@
       </div>
     </div>
 
+
     <script async src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
 
     {%- include scroll.html -%}
 
-    {%- if page.math -%}
-      {% include mathjax.html %}
-    {%- endif -%}
 
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-      {%- include google-analytics.html -%}
-    {%- endif -%}
+      {%- if page.math -%}
+        {% include mathjax.html %}
+      {%- endif -%}
+
+      {%- if jekyll.environment == 'production' and site.google_analytics -%}
+        {%- include google-analytics.html -%}
+      {%- endif -%}
+
+    {% endcomment %}
+
   </body>
 </html>
