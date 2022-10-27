@@ -1,54 +1,151 @@
----
-# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
-# only main files contain this front matter, not partials.
----
-
-//
-//                        ___
-//                       /\_ \
-//  _____     ___     ___\//\ \      __
-// /\ '__`\  / __`\  / __`\\ \ \   /'__`\
-// \ \ \_\ \/\ \_\ \/\ \_\ \\_\ \_/\  __/
-//  \ \ ,__/\ \____/\ \____//\____\ \____\
-//   \ \ \/  \/___/  \/___/ \/____/\/____/
-//    \ \_\
-//     \/_/
-//
-// Designed, built, and released under MIT license by @mdo. Learn more at
-// https://github.com/poole/poole.
-
-@import "variables";
-@import "base";
-@import "type";
-@import "code";
-@import "layout";
-@import "sidebar";
-@import "posts";
-@import "archive";
-@import "home-header";
-@import "pagination";
-@import "message";
-@import "toc";
-@import "alignment";
-
-@import "syntax-light";
-@media (prefers-color-scheme: dark) {
-  @import "syntax-dark";
+#navbar {
+  position: fixed; /* Make it stick/fixed */
+  top: -50px; /* Hide the navbar 50 px outside of the top view */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+h1, h2, h3, h4, h5, p {
+  font-family: Futura,Trebuchet MS, Arial, sans-serif;
+  word-break: keep-all;
+}
+.roboto-slab {
+  font-family: 'Roboto Slab', serif;
+}
+.noto-sans {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+h4 {
+  font-size:1.8rem
+}
+h5 {
+  font-size:1.26rem;
+}
+span {
+   font-weight: 700;
 }
 
-// Sass for creating the swatches
-.colors {
-  display: grid;
-  grid-template-columns: max-content 1fr;
+.pushpin > li {
+  font-size:25px;
+}
 
-  dt {
-    width: 3rem;
-    height: 3rem;
-    border-radius: var(--border-radius);
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.15);
-  }
+.table-of-contents a.active {
+  font-weight: 500;
+  padding-left: 14px;
+  border-left: 3px solid #003b6f;
+  color: #003b6f
+}
+.slab {
+  font-family: 'Roboto Slab', serif;
+}
 
-  dd {
-    margin-left: var(--spacer);
-  }
+.t-blue-darken {
+  color: #1e3e59 !important;
+}
+.bold {
+  font-weight: 600  !important;
+}
+
+.nav-item  {
+  /* width: 852px; */
+  /* height: 80px; */
+  margin: 0 90px 114px 585px;
+  object-fit: contain;
+  opacity: 1;
+  border-radius: 10px;
+  background-color: rgba(29, 29, 31, 0.5);
+}
+.nav-item > li  {
+  padding-left: 8px;
+  padding-right:  8px;
+  color: white !important;
+}
+.brand-logo {
+  z-index: 2;
+  margin-left: 90px;
+  width: 278px;
+  height: 64px;
+  /* margin: 7px 585px 119px 0; */
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.background_wrapper{
+  /* width: 1920px; */
+  z-index: -1;
+  height: 100vh;
+  /* padding: 114px 90px 356px 115px; */
+  object-fit: contain;
+  background-color: #0055f7;
+
+}
+.pattern_wrapper {
+  height: 100vh;
+  background-image: url("assets/CK_ti219a21517 copy@3x.png");
+  background-size: cover;
+  /* opacity: 0.6; */
+}
+/* .background_img_wrapper {
+  height: 1080px;
+  width: 100vw;
+} */
+.header-img {
+  /* opacity: 0.6; */
+  height: 60vh;
+
+}
+
+.header-text {
+  margin-top: calc(50vh - 130px );
+  margin-left:90px;
+  float: left;
+}
+section {
+  height: 100%;
+  padding-top:64px;
+  padding-bottom:64px;
+}
+.electric-blue {
+  color: #0655f7;
+}
+p {
+  /* font-size:18px; */
+  word-break: keep-all;
+}
+.section-content {
+  padding-top:64px;
+}
+
+/*  fontSize: */
+.xs   {font-size: 0.75rem}
+.sm   {font-size: 0.875rem}
+.base {font-size: 1rem}
+.lg   {font-size: 1.125rem}
+.xl   {font-size: 1.25rem}
+.2xl  {font-size: 1.5rem}
+.3xl  {font-size: 1.875rem}
+.4xl  {font-size: 2.25rem}
+.5xl  {font-size: 3rem}
+.6xl  {font-size: 4rem}
+
+.fs1  {font-size: 1vw}
+/* .fs2  {font-size: 1.4vw}
+.fs3  {font-size: 1.6vw}
+.fs4  {font-size: 1.8vw}
+.fs5  {font-size: 2vw}
+.fs6  {font-size: 2.2vw}
+.fs7  {font-size: 2.4vw}
+.fs8  {font-size: 2.6vw} */
+.name  {
+  font-weight:700;
+  font-size:1.8rem
+}
+
+img.rounded {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+}
+.bold{
+  font-weight:700
 }
