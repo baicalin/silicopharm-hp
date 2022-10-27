@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>SilicoPharm</title>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <style>
+
+      #navbar {
+        position: fixed; /* Make it stick/fixed */
+        top: -50px; /* Hide the navbar 50 px outside of the top view */
+        width: 100%; /* Full width */
+        transition: top 0.3s; /* Transition effect when sliding down (and up) */
+      }
+      h1, h2, h3, h4, h5, p {
+        font-family: Futura,Trebuchet MS, Arial, sans-serif;
+        word-break: keep-all;
+      }
+      .roboto-slab {
+        font-family: 'Roboto Slab', serif;
+      }
+      .noto-sans {
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+      h4 {
+        font-size:1.8rem
+      }
+      h5 {
+        font-size:1.26rem;
+      }
+      span {
+         font-weight: 700;
+      }
+
+      .pushpin > li {
+        font-size:25px;
+      }
+
+      .table-of-contents a.active {
+        font-weight: 500;
+        padding-left: 14px;
+        border-left: 3px solid #003b6f;
+        color: #003b6f
+      }
+      .slab {
+        font-family: 'Roboto Slab', serif;
+      }
+
+      .t-blue-darken {
+        color: #1e3e59 !important;
+      }
+      .bold {
+        font-weight: 600  !important;
+      }
+
+      .nav-item  {
+        /* width: 852px; */
+        /* height: 80px; */
+        margin: 0 90px 114px 585px;
+        object-fit: contain;
+        opacity: 1;
+        border-radius: 10px;
+        background-color: rgba(29, 29, 31, 0.5);
+      }
+      .nav-item > li  {
+        padding-left: 8px;
+        padding-right:  8px;
+        color: white !important;
+      }
+      .brand-logo {
+        z-index: 2;
+        margin-left: 90px;
+        width: 278px;
+        height: 64px;
+        /* margin: 7px 585px 119px 0; */
+        object-fit: contain;
+        mix-blend-mode: screen;
+      }
+
+      .background_wrapper{
+        /* width: 1920px; */
+        z-index: -1;
+        height: 100vh;
+        /* padding: 114px 90px 356px 115px; */
+        object-fit: contain;
+        background-color: #0055f7;
+
+      }
+      .pattern_wrapper {
+        height: 100vh;
+        background-image: url("assets/CK_ti219a21517 copy@3x.png");
+        background-size: cover;
+        /* opacity: 0.6; */
+      }
+      /* .background_img_wrapper {
+        height: 1080px;
+        width: 100vw;
+      } */
+      .header-img {
+        /* opacity: 0.6; */
+        height: 60vh;
+
+      }
+
+      .header-text {
+        margin-top: calc(50vh - 130px );
+        margin-left:90px;
+        float: left;
+      }
+      section {
+        height: 100%;
+        padding-top:64px;
+        padding-bottom:64px;
+      }
+      .electric-blue {
+        color: #0655f7;
+      }
+      p {
+        /* font-size:18px; */
+        word-break: keep-all;
+      }
+      .section-content {
+        padding-top:64px;
+      }
+
+      /*  fontSize: */
+      .xs   {font-size: 0.75rem}
+      .sm   {font-size: 0.875rem}
+      .base {font-size: 1rem}
+      .lg   {font-size: 1.125rem}
+      .xl   {font-size: 1.25rem}
+      .2xl  {font-size: 1.5rem}
+      .3xl  {font-size: 1.875rem}
+      .4xl  {font-size: 2.25rem}
+      .5xl  {font-size: 3rem}
+      .6xl  {font-size: 4rem}
+
+      .fs1  {font-size: 1vw}
+      /* .fs2  {font-size: 1.4vw}
+      .fs3  {font-size: 1.6vw}
+      .fs4  {font-size: 1.8vw}
+      .fs5  {font-size: 2vw}
+      .fs6  {font-size: 2.2vw}
+      .fs7  {font-size: 2.4vw}
+      .fs8  {font-size: 2.6vw} */
+      .name  {
+        font-weight:700;
+        font-size:1.8rem
+      }
+
+      img.rounded {
+        object-fit: cover;
+        border-radius: 50%;
+        height: 180px;
+        width: 180px;
+      }
+      .bold{
+        font-weight:700
+      }
+    </style>
+
+
+  </head>
+
+  <body>
+
+    <!-- <section  id="maintenance" class="section" style="width: 100vw; height: 100vh">
+      <div class="container">
+        <div class="row" style="margin: 0px">
+          <div class="col s12 center">
+            <div class="valign-wrapper" style="width: 100%; height: 100vh" >
+              <h3 class="center"style="margin: 0px">Uner maintenance ...</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+    <header class="header hide-on-med-and-down" style="height:100vh;">
+      <div class="navbar-fixed float hide-on-med-and-down" style="padding-top: 64px; z-index: 1; position: fixed;">
+        <nav class=" z-depth-0" style="background-color: rgba(0,0,0,0)!important;">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo black-text">
+              <img src="assets/SP_logo_v4.png" class="responsive-img">
+            </a>
+
+            <ul class="right nav-item black-text">
+              <li><a href="#about" class="white-text">About</a></li>
+              <li><a href="#problem" class="white-text">Problem</a></li>
+              <li><a href="#solution" class="white-text">Solution</a></li>
+              <li><a href="#news" class="white-text">News</a></li>
+              <li><a href="#science" class="white-text">Science</a></li>
+              <li><a href="#team" class="white-text">Team</a></li>
+              <li><a href="#contact" class="white-text">Contact</a></li>
+            </ul>
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="background_wrapper">
+        <div class="pattern_wrapper">
+          <div class="header-text">
+            <h1 class="white-text" style="font-weight:700;">WE SIMULATE BIOLOGICAL EVENT</br> FOR PHARMACEUTICAL DEVELOPMENT </h1>
+            <h5 class="white-text">SilicoPharm simulate various biological event using explainable AI. </br>
+              Our AI will contribute to de novo drug target discovery with lesser time and cost compare to conventional methods </h5>
+          </div>
+
+        </div>
+      </div>
+
+
+    </header>
+
+    <header class="header hide-on-large-only" style="height:300px !important;">
+      <div class="navbar-fixed float hide-on-large-only" style="z-index: 1; position: fixed;">
+        <nav class=" z-depth-0" style="background-color: rgba(0,0,0,0)!important;">
+          <div class="nav-wrapper center">
+            <a href="#!" class="brand-logo black-text" style="margin:0px;margin-top:16px; width:150px;">
+              <img src="assets/SP_logo_v4.png" class="responsive-img">
+            </a>
+
+            <!-- <ul class="right hide-on-med-and-down nav-item black-text">
+              <li><a href="#about" class="white-text">About</a></li>
+              <li><a href="#problem" class="white-text">Problem</a></li>
+              <li><a href="#solution" class="white-text">Solution</a></li>
+              <li><a href="#news" class="white-text">News</a></li>
+              <li><a href="#science" class="white-text">Science</a></li>
+              <li><a href="#team" class="white-text">Team</a></li>
+              <li><a href="#contact" class="white-text">Contact</a></li>
+            </ul> -->
+
+          </div>
+        </nav>
+      </div>
+
+      <div class="background_wrapper" style="">
+        <div class="pattern_wrapper">
+          <div class="container" style=" padding-top:64px;">
+            <h5 class="white-text" style="font-weight:700;">WE SIMULATE BIOLOGICAL EVENT FOR PHARMACEUTICAL DEVELOPMENT </h5>
+            <p class="white-text" style="text-align:justify;">SilicoPharm simulate various biological event using explainable AI.
+              Our AI will contribute to de novo drug target discovery with lesser time and cost compare to conventional methods </p>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+
+    <section id="about" style="background-color: #ebebeb;">
+      <!-- <h3>ABOUT US</h3> -->
+      <div class="container">
+
+        <div class="row section-title">
+          <div class="col s12">
+              <p class="noto-sans">생명과학자가 <span class="bold">쉽게 사용할 수 있는 솔루션</span>으로</p>
+              <!-- <h5 class="noto-sans" style="font-weight:700;">We생명과학자가 쉽게 사용할 수 있는 인공지능 솔루션으로</h5> -->
+              <h3 class="noto-sans" style="font-weight:700; margin:0px">생명과학 연구를 가속화 합니다.</h3>
+          </div>
+        </div>
+
+        <div class="row section-content">
+          <div class="col s12 m6 l6 center">
+              <span class="left">MISSION</span>
+              <div class="col s12">
+                <img src="assets/그룹 73.png" alt="" class="responsive-img">
+                <h4 class="electric-blue">Accelerating Bio Sceince Research</h4>
+                <p class="grey-text">생명과학 연구의 가속화</p>
+              </div>
+
+          </div>
+          <div class="col s12 m6 l6 center">
+              <span class="left">VISION</span>
+              <div class="col s12">
+                <img src="assets/구성 요소 6 – 1.png" alt="" class="responsive-img">
+                <h4 class="electric-blue">Easy-to-use AI solution</h4>
+                <p class="grey-text hide-on-med-and-down">
+                  지속가능한 혁신·바이오 신약의 개발을</br>
+                  가능하게 하는 사용하기 쉬운 인공지능 솔루션</p>
+                  <p class="grey-text hide-on-large-only">
+                  지속가능한 혁신·바이오 신약의 개발을
+                  가능하게 하는 사용하기 쉬운 인공지능 솔루션</p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section id="problem" style="background-color:white;">
+
+      <div class="container">
+        <div class="row section-title">
+          <div class="col s12">
+              <p class="noto-sans"><span class="bold">차세대 타겟 탐색 솔루션</span>으로</p>
+              <h3 class="noto-sans" style="font-weight:700; margin:0px">불치병의 치료제를 만듭니다.</h3>
+          </div>
+        </div>
+        <div class="row section-content hide-on-med-and-down">
+          <div class="valign-wrapper">
+            <div class="col s12 l6 center">
+              <img src="assets/R_binding.jpg" class="responsive-img z-depth-2" alt="">
+            </div>
+            <div class="col s12 l6">
+              <h5 class="noto-sans" style="font-weight:700;">코로나-19에서 보는 생명과학의 혁신</h3>
+              <p class="noto-sans grey-text" style="text-align:justify;">
+                 구조기반 설계 기술을 포함한 현대 생명과학 기술을 동원하면,
+                 타겟(생체 내 질병의 원인물질)과 정확히 상호작용하는 신약을 설계함으로써
+                 코로나와 같은 새로운 질병에 대해서 1년 남짓한 기간 만에 백신과 치료제 개발이 가능합니다.
+              </p>
+              <h5 class="noto-sans" style="font-weight:700;">왜? 이런 기술들을 불치병에 적용할 수 없을까요?</h3>
+              <p class="noto-sans grey-text" style="text-align:justify;">
+                 그러나 이런 기술들을 치매나 파킨슨병 혹은 루게릭병 등의
+                 인간의 존엄을 파괴하는 불치병들에 적용하는 것은 불가능합니다.
+                 왜냐하면 이들 불치병들은 새로운 기술들의 적용대상이 되는 타겟이 알려지지 않았기 때문입니다.
+              </p>
+              <h5 class="noto-sans" style="font-weight:700;">불치병의 타겟을 탐색하는 솔루션</h3>
+              <p class="noto-sans grey-text" style="text-align:justify;">
+                 실리코팜(주)는 이들 질병에 적용가능한 타겟 탐색 솔루션을 개발함으로써
+                 불치병의 치료제 개발에 기여하고자 하며, 나아가 생명과학 연구속도를 가속하고자 합니다.
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <div class="row section-content hide-on-large-only">
+
+              <div class="col s12 l6 center">
+                <img src="assets/R_binding.jpg" class="responsive-img z-depth-2" alt="">
+              </div>
+              <div class="col s12 l6">
+                <h5 class="noto-sans" style="font-weight:700;">코로나-19에서 보는 생명과학의 혁신</h3>
+                <p class="noto-sans grey-text" style="text-align:justify;">
+                   구조기반 설계 기술을 포함한 현대 생명과학 기술을 동원하면,
+                   타겟(생체 내 질병의 원인물질)과 정확히 상호작용하는 신약을 설계함으로써
+                   코로나와 같은 새로운 질병에 대해서 1년 남짓한 기간 만에 백신과 치료제 개발이 가능합니다.
+                </p>
+                <h5 class="noto-sans" style="font-weight:700;">왜? 이런 기술들을 불치병에 적용할 수 없을까요?</h3>
+                <p class="noto-sans grey-text" style="text-align:justify;">
+                   그러나 이런 기술들을 치매나 파킨슨병 혹은 루게릭병 등의
+                   인간의 존엄을 파괴하는 불치병들에 적용하는 것은 불가능합니다.
+                   왜냐하면 이들 불치병들은 새로운 기술들의 적용대상이 되는 타겟이 알려지지 않았기 때문입니다.
+                </p>
+                <h5 class="noto-sans" style="font-weight:700;">불치병의 타겟을 탐색하는 솔루션</h3>
+                <p class="noto-sans grey-text" style="text-align:justify;">
+                   실리코팜(주)는 이들 질병에 적용가능한 타겟 탐색 솔루션을 개발함으로써
+                   불치병의 치료제 개발에 기여하고자 하며, 나아가 생명과학 연구속도를 가속하고자 합니다.
+                </p>
+              </div>
+
+          </div>
+    </section>
+    <section id="solution"  style="background-color: #ebebeb;">
+
+      <div class="container">
+        <div class="row section-title">
+          <div class="col s12 center">
+              <!-- <p class="noto-sans">생명과학자가 <span class="bold">쉽게 사용할 수 있는 솔루션</span>으로</p> -->
+              <h3 class="noto-sans electric-blue" style="font-weight:700; margin:0px">차별화된 솔루션</h3>
+          </div>
+        </div>
+        <div class="row section-content">
+
+          <div class="col s12 m4 center" style="margin-top:34px;">
+            <img src="assets/UI-2.png" alt="" style="width:150px; height:150px;" class="responsive-img">
+            <h4 class="electric-blue noto-sans" style="font-weight:700;">높은 접근성</h4>
+            <p class="grey-text">
+               웹 플랫폼을 통해 제공되는 서비스는 컴퓨터에 익숙하지
+               않은 생명과학 연구자들도 손쉽게 솔루션을 사용할 수 있는
+               기회를 제공합니다.</p>
+          </div>
+          <div class="col s12 m4 center" style="margin-top:34px;">
+            <img src="assets/report-2.png" alt="" style="width:150px; height:150px;" class="responsive-img">
+            <h4 class="electric-blue noto-sans" style="font-weight:700;">높은 구체성</h4>
+            <p class="grey-text">
+              개별 유전자의 증감이나 확률 등의 1차원적 정보만을 제공하는
+              기존방법과 달리 네트워크 수준으로 제공되는 결과물은 연구자의
+              보다 폭넓은 가설설정을 돕습니다.</p>
+          </div>
+          <div class="col s12 m4 center" style="margin-top:34px;">
+            <img src="assets/data-2.png" alt="" style="width:150px; height:150px;" class="responsive-img">
+            <h4 class="electric-blue noto-sans" style="font-weight:700;">적은 학습 데이터</h4>
+            <p class="grey-text">
+              단일 프로젝트에서 생산되는 정도의 데이터로 학습이 가능한
+              인공지능 기술은 연구자 수준에서의 모델 학습 뿐만
+              아니라 희귀 및 뇌·신경질환에의 솔루션 적용을 가능하게 합니다.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <section id="news">
+
+      <div class="container">
+        <div class="row section-title">
+          <div class="col s12 center">
+              <h3 class="noto-sans" style="font-weight:700; margin:0px">News</h3>
+          </div>
+        </div>
+
+        <!-- <div class="row section-content">
+          <div class="col s12 l4">
+            <div class="card medium" >
+              <div class="card-image">
+                <img src="https://via.placeholder.com/160" class="responsive-img">
+                <span class="card-title">Card Title</span>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div>
+
+    </section>
+    <section id="science"  style="background-color: #ebebeb;">
+
+      <div class="container">
+        <div class="row section-title">
+          <div class="col s12 center">
+              <h3 class="noto-sans" style="font-weight:700; margin:0px">Science</h3>
+          </div>
+        </div>
+        <!-- <div class="row section-content">
+          <div class="col s12">
+            <div class="card horizontal">
+              <div class="card-image hide-on-med-and-down">
+                <img src="https://via.placeholder.com/160">
+              </div>
+              <div class="card-stacked">
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <!-- Scientific advisor and publication  -->
+    </section>
+    <section id="team">
+      <div class="container">
+        <div class="row section-title">
+          <div class="col s12 center">
+              <h3 class="noto-sans" style="font-weight:700; margin:0px">Team</h3>
+          </div>
+        </div>
+        <div class="row section-content">
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/TaehyeongKim.jpg" alt="" class="responsive-img rounded"> -->
+              <h4 class="noto-sans name" style="">김태형</h4>
+              <p class="grey-text">공동대표</p>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/타원 1.png" alt="" class="responsive-img"> -->
+              <h4 class="noto-sans name" style="font-weight:700;">지상호</h4>
+              <p class="grey-text">공동대표</p>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/타원 1.png" alt="" class="responsive-img"> -->
+              <h4 class="noto-sans name" style="font-weight:700;">이경민</h4>
+              <p class="grey-text">연구개발</p>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/타원 1.png" alt="" class="responsive-img"> -->
+              <h4 class="noto-sans name" style="font-weight:700;">김범수</h4>
+              <p class="grey-text">연구개발</p>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/타원 1.png" alt="" class="responsive-img"> -->
+              <h4 class="noto-sans name" style="font-weight:700;">양원진</h4>
+              <p class="grey-text">연구개발</p>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/타원 1.png" alt="" class="responsive-img"> -->
+              <h4 class="noto-sans name" style="font-weight:700;">전홍수</h4>
+              <p class="grey-text">행정</p>
+            </div>
+          </div>
+          <div class="col s12 m4 l3">
+            <div class="col s12 center">
+              <!-- <img src="assets/타원 1.png" alt="" class="responsive-img"> -->
+              <h4 class="noto-sans name" style="font-weight:700;">Ashim Janbolat</h4>
+              <p class="grey-text">연구개발</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section id="contact" style="background-color: #0055f7;">
+
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m6">
+            <h5 class="noto-sans" style="font-weight:700; margin:0px">본사 및 연구소 주소</h3>
+            <p class="noto-sans white-text">대구광역시 달성군 현풍읍 테크노중앙대로 333, DGIST 산학협력관(R7) 507호, 403B호</p>
+            <h5 class="noto-sans" style="font-weight:700; margin:0px">대표전화</h3>
+            <p class="noto-sans white-text">053-614-0721</p>
+            <h5 class="noto-sans" style="font-weight:700; margin:0px">문의메일</h3>
+            <p class="noto-sans white-text">contact@silicopharm.com</p>
+          </div>
+          <div class="col s12 m6">
+
+
+            <div class="row">
+              <!-- <form action="mailto:taehyeongkim@silicopharm.com"
+               method=”POST” enctype=”multipart/form-data” name=”EmailForm” class="col s12">
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" name="ContactName">
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <textarea id="textarea1" class="materialize-textarea" name="ContactComment"></textarea>
+                    <label for="textarea1">Textarea</label>
+                  </div>
+                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </form> -->
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer white">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="grey-text">ADDRESS</h5>
+        <p class="electric-blue">
+          R7-507 and 403B, 333, Techno jungang-daero, Hyeonpung-myeon,</br>
+          Dalseong-gun, Daegu, 42988(ZIP), REPUBLIC OF KOREA
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="grey-text">TEL</h5>
+        <p class="electric-blue">
+          82+ 53-614-0721
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="grey-text">EMAIL</h5>
+        <p class="electric-blue">
+          contact@silicopharm.com
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright black">
+    <div class="container">
+    Copyright ⓒ SilicoPharm, Inc. All right reserved.
+    <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+    </div>
+  </div>
+</footer>
+
+</body>
