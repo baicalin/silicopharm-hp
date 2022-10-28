@@ -1,0 +1,34 @@
+<section id="news">
+
+  <div class="container">
+    <div class="row section-title">
+      <div class="col s12 center">
+          <h3 class="noto-sans" style="font-weight:700; margin:0px">News</h3>
+      </div>
+    </div>
+
+    <div class="row section-content">
+      {% for post in paginator.posts %}
+
+      <div class="col s12 l4">
+          <div class="card medium" >
+            <div class="card-image">
+              <img src="https://via.placeholder.com/160" class="responsive-img">
+              <span class="card-title">{{ post.title }}</span>
+            </div>
+            <div class="card-content">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+              <p>{{ post.excerpt | strip_html }}</p>
+            </div>
+            <div class="card-action">
+              <a href="{{ post.url | relative_url }}">Show</a>
+            </div>
+          </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>

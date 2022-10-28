@@ -1,0 +1,51 @@
+<header class="header hide-on-med-and-down" style="height:100vh;">
+  <div class="navbar-fixed float hide-on-med-and-down" style="padding-top: 64px; z-index: 1; position: fixed;">
+    <nav class=" z-depth-0" style="background-color: rgba(0,0,0,0)!important;">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo black-text">
+          <img src="{{ 'assets/SP_logo_v4.png' | relative_url }}" class="responsive-img">
+        </a>
+
+        <ul class="right nav-item black-text">
+          <li><a href="#about" class="white-text">About</a></li>
+          <li><a href="#problem" class="white-text">Problem</a></li>
+          <li><a href="#solution" class="white-text">Solution</a></li>
+          <li><a href="#news" class="white-text">News</a></li>
+          <li><a href="#science" class="white-text">Science</a></li>
+          <li><a href="#team" class="white-text">Team</a></li>
+          <li><a href="#contact" class="white-text">Contact</a></li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+
+  <div class="background_wrapper">
+    <div class="pattern_wrapper">
+      <div class="header-text">
+        <h1 class="white-text" style="font-weight:700;">WE SIMULATE BIOLOGICAL EVENT</br> FOR PHARMACEUTICAL DEVELOPMENT </h1>
+        <h5 class="white-text">SilicoPharm simulate various biological event using explainable AI. </br>
+          Our AI will contribute to de novo drug target discovery with lesser time and cost compare to conventional methods </h5>
+      </div>
+
+    </div>
+  </div>
+
+
+</header>
+
+{% comment %}
+<div class="home-header pure-menu pure-menu-horizontal">
+  <div class="home-header-bar">
+    {% if site.data.archive %}
+    <ul class="home-header-menu pure-menu-list">
+      {% for item in site.data.archive %}
+        <li class="pure-menu-item">
+          <a href="{{ item.url | relative_url }}" class="pure-menu-link {% if page.url == item.url %}current-item{% endif %}"">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</div>
+{% endcomment %}
