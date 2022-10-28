@@ -1,0 +1,39 @@
+<section id="news">
+
+  <div class="container">
+    <div class="row section-title">
+      <div class="col s12 center">
+          <h3 class="noto-sans" style="font-weight:700; margin:0px">News</h3>
+      </div>
+    </div>
+
+    <div class="row section-content">
+      {% for post in paginator.posts %}
+
+      <div class="col s12 l4">
+        <a href="{{ post.url | relative_url }}">
+          <div class="card medium" >
+            <div class="card-image">
+              <img src="https://via.placeholder.com/160" class="responsive-img">
+              <span class="card-title">{{ post.title }}</span>
+            </div>
+            <div class="card-content">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+              <p>{{ post.excerpt | strip_html }}</p>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </a>
+
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
