@@ -11,7 +11,6 @@
       {% for post in paginator.posts %}
 
       <div class="col s12 l4">
-        <a href="{{ post.url | relative_url }}">
           <div class="card medium" >
             <div class="card-image">
               <img src="https://via.placeholder.com/160" class="responsive-img">
@@ -20,15 +19,11 @@
             <div class="card-content">
               <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
               <p>{{ post.excerpt | strip_html }}</p>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="{{ post.url | relative_url }}">Show</a>
             </div>
           </div>
-        </a>
-
       </div>
       {% endfor %}
 
