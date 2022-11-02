@@ -10,24 +10,65 @@
     <div class="row section-content">
       {% for post in paginator.posts %}
 
-      <div class="col s12 l4">
+      <!-- <div class="col s12 l4">
           <div class="card medium" >
             <div class="card-image">
-              <img src="https://via.placeholder.com/160" class="responsive-img">
-              <span class="card-title">{{ post.title }}</span>
+              <img src="{{ post.image }}" class="responsive-img">
+              <a href="{{ post.origin_url }}">
+                <span class="card-title">{{ post.title }}</span>
+              </a>
             </div>
             <div class="card-content">
-              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
               <p>{{ post.excerpt | strip_html }}</p>
-            </div>
-            <div class="card-action">
-              <a href="{{ post.url | relative_url }}">Show</a>
+              <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%m/%d/%Y" }}</time>
             </div>
           </div>
-      </div>
+      </div> -->
+        {%- if post.tags contains "news" -%}
+        <div class="col s12 l4">
+        <div class="card medium">
+          <a href="{{ post.url }}">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{ post.image }}">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{ post.title }}</span>
+            <!-- <p><a href="{{ post.origin_url }}">This is a link</a></p> -->
+            <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%m/%d/%Y" }}</time>
+          </div>
+        </a>
+          <!-- <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{ post.title }}<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div> -->
+        </div>
+        </div>
+        {%- endif -%}
+
       {% endfor %}
 
-    </div>
+
+      <div class="collection">
+        {% for post in paginator.posts %}
+        <!-- <div>
+          <img class="responsive-img" src="{{ post.image }}">
+        </div> -->
+        <a href="{{ post.origin_url }}" class="collection-item">
+          {{ post.title }}
+        </a>
+        {% endfor %}
+      </div>
+
+
+      <!-- <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="active"><a href="#!">1</a></li>
+        <li class="waves-effect"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+      </ul> -->
 
   </div>
 

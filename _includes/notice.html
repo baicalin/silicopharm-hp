@@ -1,0 +1,57 @@
+<section id="notice"  style="background-color: #ebebeb;">
+
+    <div class="container">
+      <div class="row section-title">
+        <div class="col s12 center">
+            <h3 class="noto-sans" style="font-weight:700; margin:0px">Notice</h3>
+        </div>
+      </div>
+
+      <!-- <div class="row section-content">
+        <div class="col s12">
+          <div class="card horizontal">
+            <div class="card-image hide-on-med-and-down">
+              <img src="https://via.placeholder.com/160">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <!-- </div> -->
+    <!-- Scientific advisor and publication -->
+
+
+    <div class="row section-content">
+      <div class="card subscriber-list-card animate fadeRight">
+        <table class="subscription-table responsive-table highlight">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                  공지사항
+                  <a href="{{ post.url }}">
+                    <span>{{ post.title }}</span>
+                  </a>
+                </td>
+                <td>
+                  작성일
+                  <!-- <td>{{ post.date | date: "%m/%d/%Y" }}</td> -->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</section>
