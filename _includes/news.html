@@ -10,7 +10,7 @@
     <div class="row section-content">
       {% for post in paginator.posts %}
 
-      <!-- <div class="col s12 l4">
+      <div class="col s12 l4">
           <div class="card medium" >
             <div class="card-image">
               <img src="{{ post.image }}" class="responsive-img">
@@ -23,7 +23,7 @@
               <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%m/%d/%Y" }}</time>
             </div>
           </div>
-      </div> -->
+      </div>
         {%- if post.tags contains "news" -%}
         <div class="col s12 l4">
         <div class="card medium">

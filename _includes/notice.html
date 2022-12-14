@@ -31,27 +31,19 @@
     <div class="row section-content">
       <div class="card subscriber-list-card animate fadeRight">
         <table class="subscription-table responsive-table highlight">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
+          <thead>
+            <th>Title | Date<th>
+          </thead>
+      {% for post in paginator.posts %}
+      <table class="subscription-table responsive-table highlight">
                 <td>
-                  공지사항
                   <a href="{{ post.url }}">
-                    <span>{{ post.title }}</span>
+                    <span>{{ post.title }}
+                    </span>
                   </a>
+                  <time datetime="{{ post.date | date_to_string }}">{{ post.date | date: "%m/%d/%Y" }}</time>
                 </td>
-                <td>
-                  작성일
-                  <!-- <td>{{ post.date | date: "%m/%d/%Y" }}</td> -->
-                </td>
-            </tr>
-            </tbody>
         </table>
-    </div>
+        {%- endfor -%}
   </div>
 </section>
